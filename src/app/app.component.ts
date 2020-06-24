@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Jeu} from './jeu';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'time-bomb';
+
+  jeu = new Jeu();
+
+  public log(val) {
+    console.log(val);
+  }
 }

@@ -1,36 +1,28 @@
 export class Carte {
 
-  public static Valeurs: string[] = [
+  public static Types: string[] = [
     'Neutre',
     'Bombe',
     'Désamorcage'
   ];
 
+  public static CarteNeutre = new Carte(Carte.Types[0]);
+  public static CarteBombe = new Carte(Carte.Types[1]);
+  public static CarteDesamorcage = new Carte(Carte.Types[2]);
+
   private valeur: string;
   private estCache: boolean;
 
   constructor(
-    valeur: string | number,
-    estCache: boolean = false
+    valeur: string,
+    estCache: boolean = true
   ) {
-
-    if ('number' === typeof valeur) {
-      if (0 < valeur) {
-        throw new Error(`Un nombre positif ou une valeur inclue dans : ${Carte.Valeurs.toString()} est attendue.`);
-      }
-      if (Carte.Valeurs.length - 1 < valeur) {
-        throw new Error(`Un nombre entre 0 et ${Carte.Valeurs.length - 1} ou une valeur inclue dans : ${Carte.Valeurs.toString()} est attendue.`);
-      }
-      valeur = Carte.Valeurs[valeur];
-    }
-
-    if (false === Carte.Valeurs.includes(valeur)) {
+    if (false === Carte.Types.includes(valeur)) {
       throw new Error('La valeur de la carte n\'existe pas');
     }
 
     this.valeur = valeur;
     this.estCache = estCache;
-
   }
 
   public cacher() {

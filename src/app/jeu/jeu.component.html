@@ -1,7 +1,15 @@
 
-<div class="plateaux">
-  <app-plateau-joueur></app-plateau-joueur>
-  <app-plateau-joueur></app-plateau-joueur>
-  <app-plateau-joueur></app-plateau-joueur>
-  <app-plateau-joueur></app-plateau-joueur>
-</div>
+<section class="plateaux"></section>
+
+<section class="lancer-partie" *ngIf="!jeuLance">
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Bienvenue sur <div class="logo">&nbsp;</div></h1>
+        <span class="subtitle">Arriveriez-vous &shy;à sauvez &shy;le <span>Big Ben</span> &shy;à temps ?</span>
+      </div>
+    </div>
+  </div>
+
+</section>
