@@ -4,10 +4,19 @@
 <section class="lancer-partie" *ngIf="!jeuLance">
 
   <div class="container shadow-lg">
-    <div class="row">
+    <div class="row mb-5">
       <div class="col">
         <h1>Bienvenue sur <div class="logo">&nbsp;</div></h1>
         <span class="subtitle">Arriveriez-vous &shy;à sauvez &shy;le <span>Big Ben</span> &shy;<span>à temps ?</span></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="nombre-joueurs">
+          <button type="button" class="moins btn btn-primary" (click)="decrementerNombreJoueurs()" *ngIf="nombreJoueurs>nombreJoueursMin">-</button>
+          <div class="valeur"><span>{{ nombreJoueurs }}</span> Joueurs</div>
+          <button type="button" class="plus btn btn-primary" (click)="incrementerNombreJoueurs()" *ngIf="nombreJoueurs<nombreJoueursMax">+</button>
+        </div>
       </div>
     </div>
   </div>

@@ -55,7 +55,7 @@ section.lancer-partie {
     }
   }
 
-  .col:first-of-type {
+  .col {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,6 +124,20 @@ section.lancer-partie {
       $height: $width * $ratio;
       width: $width;
       height: $height;
+    }
+  }
+
+  .nombre-joueurs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > :not(:first-child) {
+      margin-left: 1.5rem;
+    }
+
+    span {
+      font-weight: bold;
     }
   }
 
