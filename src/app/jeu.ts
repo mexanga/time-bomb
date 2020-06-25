@@ -186,7 +186,7 @@ export class Jeu {
         nombre: number
       ) {
         for (; nombre-- ;) {
-          let carte = that.deck.carteAleatoire();
+          const carte = that.deck.carteAleatoire();
           that.deck.enlever(carte);
           plateau.main.ajouter(carte);
         }

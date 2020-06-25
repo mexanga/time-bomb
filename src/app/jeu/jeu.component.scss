@@ -15,6 +15,16 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+
+    &[data-equipe="Terroriste"] {
+      background: #7f0000;
+      color: white;
+    }
+
+    &[data-equipe="Sherlock"] {
+      background: #002171;
+      color: white;
+    }
   }
 }
 

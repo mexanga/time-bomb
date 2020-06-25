@@ -26,7 +26,7 @@ export class PlateauJoueur {
 
   main: Deck;
 
-  private equipe: string;
+  public equipe: string;
   joueur: Joueur;
 
   public static PlateauJoueurTerroriste(
