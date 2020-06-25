@@ -3,19 +3,26 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {JeuModule} from './jeu/jeu.module';
+import {PlateauJoueurComponent} from './plateau-joueur/plateau-joueur.component';
+import {CarteComponent} from './carte/carte.component';
+import {JeuComponent} from './jeu/jeu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlateauJoueurComponent,
+    CarteComponent,
+    JeuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    JeuModule
+    AppRoutingModule
   ],
   providers: [],
   exports: [
+    PlateauJoueurComponent,
+    CarteComponent,
+    JeuComponent
   ],
   bootstrap: [AppComponent]
 })

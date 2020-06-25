@@ -9,8 +9,6 @@ import {Jeu} from './jeu';
 export class AppComponent {
   title = 'time-bomb';
 
-  jeu = new Jeu();
-
   public log(val) {
     console.log(val);
   }

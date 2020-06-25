@@ -1,5 +1,5 @@
 <section class="plateaux" *ngIf="jeuLance">
-  <app-plateau-joueur *ngFor="let plateau of jeu.plateaux">{{plateau.joueur.id}}</app-plateau-joueur>
+  <app-plateau-joueur *ngFor="let plateau of plateauxJoueurs()">{{plateau.joueur.id}}</app-plateau-joueur>
 </section>
 
 <section class="lancer-partie" *ngIf="!jeuLance">

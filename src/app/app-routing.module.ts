@@ -4,7 +4,7 @@ import {JeuComponent} from './jeu/jeu.component';
 
 
 const routes: Routes = [
-  { path: 'jeu', component: JeuComponent, loadChildren: './jeu/jeu.module#JeuModule' },
+  { path: 'jeu', component: JeuComponent },
   { path: '', pathMatch: 'full', redirectTo: 'jeu' }
 ];
 

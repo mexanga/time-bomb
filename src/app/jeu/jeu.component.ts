@@ -58,7 +58,12 @@ export class JeuComponent implements OnInit {
       this.nomJoueur = nomJoueur;
       this.jeuLance = true;
       this.modalNomJoueur.bsinstance.hide();
+      this.jeu = new Jeu(nomJoueur, this.nombreJoueurs);
     }
+  }
+
+  plateauxJoueurs() {
+    return this.jeu.plateaux;
   }
 
 }

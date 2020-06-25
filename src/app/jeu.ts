@@ -25,6 +25,7 @@ export class Jeu {
 
 
   constructor(
+    public nomJoueurHumain: string,
     nombreJoueurs: number = Jeu.NombreJoueurs.min
   ) {
     if (Jeu.NombreJoueurs.min > nombreJoueurs || Jeu.NombreJoueurs.max < nombreJoueurs) {
@@ -122,7 +123,7 @@ export class Jeu {
       }
 
       if (0 === cursor) {
-        const joueurHumain = Joueur.JoueurHumain();
+        const joueurHumain = Joueur.JoueurHumain(this.nomJoueurHumain);
         this.plateaux.push(new PlateauJoueur(joueurHumain, equipe));
         continue;
       }
