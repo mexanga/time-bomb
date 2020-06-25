@@ -16,6 +16,8 @@ export class JeuComponent implements OnInit {
   public nombreJoueursMin = Jeu.NombreJoueurs.min;
   public nombreJoueursMax = Jeu.NombreJoueurs.max;
 
+  public nomValide: boolean|null;
+
 
   public nomJoueur: string;
 
@@ -37,13 +39,16 @@ export class JeuComponent implements OnInit {
   afficherModalNomJoueur(event): void {
     console.log({event});
     const modal = new Modal({
-      id: 'modalNomJoueur',
-      trigger: event.toElement
+      id: 'modalNomJoueur'
     });
   }
 
   definirNomJoueur(event) {
     console.log({event});
+    const inputNomJoueur = (document.getElementById('inputNomJoueur') as HTMLInputElement);
+    const nomJoueur = inputNomJoueur.value;
+    const nomInvalide = 1 > nomJoueur.length || 64 < nomJoueur.length;
+    this.nomValide = false === nomInvalide;
   }
 
 }

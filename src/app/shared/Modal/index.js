@@ -23,9 +23,9 @@ export class Modal {
 
       const modal = document.getElementById(id);
 
-      const modalInstance = new BsModal(modal, options);
+      this.bsinstance = new BsModal(modal, options);
 
-      modalInstance.show();
+      this.bsinstance.show();
 
       modal.addEventListener('hidden.bs.modal', function () {
         onClose(modal);

@@ -41,14 +41,14 @@
       <div class="modal-body">
         <form>
           <div class="w-100">
-            <input type="text" name="nomJoueur" aria-describedby="infoNomJoueur" class="w-100 form-control form-control-lg">
+            <input type="text" name="nomJoueur" aria-describedby="infoNomJoueur" id="inputNomJoueur" class="w-100 form-control form-control-lg" [ngClass]="{'is-invalid': false === nomValide, 'is-valid': true === nomValide}">
             <div id="infoNomJoueur" class="form-text">Vous être libre sur votre pseudo.</div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" (click)="definirNomJoueur($event)">Commencer</button>
+        <button type="button" class="btn btn-primary" id="lancerJeuBtn" (click)="definirNomJoueur($event)">Commencer</button>
       </div>
     </div>
   </div>
