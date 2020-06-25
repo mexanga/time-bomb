@@ -9,7 +9,7 @@ export class Joueur {
     this.score = 0;
   }
 
-  private id: string;
+  id: string;
   private score: number;
 
   static JoueurHumain() {

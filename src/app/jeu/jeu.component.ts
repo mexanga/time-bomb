@@ -21,6 +21,8 @@ export class JeuComponent implements OnInit {
 
   public nomJoueur: string;
 
+  private modalNomJoueur: Modal;
+
   constructor() {
     this.nombreJoueurs = this.nombreJoueursMin;
   }
@@ -37,18 +39,26 @@ export class JeuComponent implements OnInit {
   }
 
   afficherModalNomJoueur(event): void {
-    console.log({event});
-    const modal = new Modal({
+    this.modalNomJoueur =  new Modal({
       id: 'modalNomJoueur'
     });
   }
 
-  definirNomJoueur(event) {
-    console.log({event});
+  verifierNomJoueur(event) {
     const inputNomJoueur = (document.getElementById('inputNomJoueur') as HTMLInputElement);
     const nomJoueur = inputNomJoueur.value;
-    const nomInvalide = 1 > nomJoueur.length || 64 < nomJoueur.length;
+    const nomInvalide = 3 > nomJoueur.length || 64 < nomJoueur.length;
     this.nomValide = false === nomInvalide;
+  }
+
+  definirNomJoueur(event) {
+    const inputNomJoueur = (document.getElementById('inputNomJoueur') as HTMLInputElement);
+    const nomJoueur = inputNomJoueur.value;
+    if (true === this.nomValide) {
+      this.nomJoueur = nomJoueur;
+      this.jeuLance = true;
+      this.modalNomJoueur.bsinstance.hide();
+    }
   }
 
 }

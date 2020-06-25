@@ -1,27 +1,36 @@
-
-<section class="plateaux"></section>
+<section class="plateaux" *ngIf="jeuLance">
+  <app-plateau-jeu *ngFor="let plateau of jeu.plateaux">{{plateau.joueur.id}}</app-plateau-jeu>
+</section>
 
 <section class="lancer-partie" *ngIf="!jeuLance">
 
   <div class="container shadow-lg">
     <div class="row mb-5">
       <div class="col">
-        <h1>Bienvenue sur <div class="logo">&nbsp;</div></h1>
-        <span class="subtitle">Arriveriez-vous &shy;à sauvez &shy;le <span>Big Ben</span> &shy;<span>à temps ?</span></span>
+        <h1>Bienvenue sur
+          <div class="logo">&nbsp;</div>
+        </h1>
+        <span
+          class="subtitle">Arriveriez-vous &shy;à sauvez &shy;le <span>Big Ben</span> &shy;<span>à temps ?</span></span>
       </div>
     </div>
     <div class="row mb-5">
       <div class="col">
         <div class="nombre-joueurs">
-          <button type="button" class="moins btn btn-primary" (click)="decrementerNombreJoueurs()" [ngClass]="{'invisible':nombreJoueurs===nombreJoueursMin }">-</button>
+          <button type="button" class="moins btn btn-primary" (click)="decrementerNombreJoueurs()"
+                  [ngClass]="{'invisible':nombreJoueurs===nombreJoueursMin }">-
+          </button>
           <div class="valeur"><span>{{ nombreJoueurs }}</span> Joueurs</div>
-          <button type="button" class="plus btn btn-primary" (click)="incrementerNombreJoueurs()" [ngClass]="{'invisible':nombreJoueurs===nombreJoueursMax }">+</button>
+          <button type="button" class="plus btn btn-primary" (click)="incrementerNombreJoueurs()"
+                  [ngClass]="{'invisible':nombreJoueurs===nombreJoueursMax }">+
+          </button>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <button type="button" class="btn btn-primary btn-lg" (click)="afficherModalNomJoueur($event)">Lancer la partie</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="afficherModalNomJoueur($event)">Lancer la partie
+        </button>
       </div>
     </div>
   </div>
@@ -29,7 +38,8 @@
 </section>
 
 <!-- Modal -->
-<div class="modal fade" role="dialog" id="modalNomJoueur" tabindex="-1" aria-labelledby="Boite de dialogue : définir le nom du joueur" aria-hidden="true">
+<div class="modal fade" role="dialog" id="modalNomJoueur" tabindex="-1"
+     aria-labelledby="Boite de dialogue : définir le nom du joueur" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,14 +51,18 @@
       <div class="modal-body">
         <form>
           <div class="w-100">
-            <input type="text" name="nomJoueur" aria-describedby="infoNomJoueur" id="inputNomJoueur" class="w-100 form-control form-control-lg" [ngClass]="{'is-invalid': false === nomValide, 'is-valid': true === nomValide}">
+            <input type="text" name="nomJoueur" aria-describedby="infoNomJoueur" id="inputNomJoueur"
+                   class="w-100 form-control form-control-lg"
+                   [ngClass]="{'is-invalid': false === nomValide, 'is-valid': true === nomValide}"
+                  (change)="verifierNomJoueur($event)">
             <div id="infoNomJoueur" class="form-text">Vous être libre sur votre pseudo.</div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" id="lancerJeuBtn" (click)="definirNomJoueur($event)">Commencer</button>
+        <button type="button" class="btn btn-primary" id="lancerJeuBtn" (click)="definirNomJoueur($event)">Commencer
+        </button>
       </div>
     </div>
   </div>

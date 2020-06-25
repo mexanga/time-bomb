@@ -13,7 +13,7 @@ export class Jeu {
 
   private nombreJoueurs: number;
   private deck: Deck = new Deck();
-  private plateaux: PlateauJoueur[] = [];
+  plateaux: PlateauJoueur[] = [];
 
   private nombreCarteJouee: number;
   private numeroRound: number;
