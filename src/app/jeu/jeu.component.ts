@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Jeu} from "../jeu";
+import {Jeu} from '../jeu';
+import {Modal} from '../shared/Modal';
 
 @Component({
   selector: 'app-jeu',
@@ -15,6 +16,9 @@ export class JeuComponent implements OnInit {
   public nombreJoueursMin = Jeu.NombreJoueurs.min;
   public nombreJoueursMax = Jeu.NombreJoueurs.max;
 
+
+  public nomJoueur: string;
+
   constructor() {
     this.nombreJoueurs = this.nombreJoueursMin;
   }
@@ -28,6 +32,18 @@ export class JeuComponent implements OnInit {
 
   incrementerNombreJoueurs(): void {
     this.nombreJoueurs = Math.min(this.nombreJoueursMax, this.nombreJoueurs + 1);
+  }
+
+  afficherModalNomJoueur(event): void {
+    console.log({event});
+    const modal = new Modal({
+      id: 'modalNomJoueur',
+      trigger: event.toElement
+    });
+  }
+
+  definirNomJoueur(event) {
+    console.log({event});
   }
 
 }
