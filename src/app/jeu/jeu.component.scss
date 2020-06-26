@@ -8,41 +8,6 @@
   left: 0;
   right: 0;
 
-  &[data-nombre-joueur="4"] {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "plateau0 plateau1" "plateau2 plateau3";
-  }
-
-  &[data-nombre-joueur="5"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "plateau0 plateau0 plateau1 plateau1" ". plateau2 plateau2 ." "plateau3 plateau3 plateau4 plateau4";
-  }
-
-  &[data-nombre-joueur="6"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "plateau0 plateau0 plateau1 plateau1" ". plateau2 plateau2 plateau3 plateau3 ." "plateau4 plateau4 plateau5 plateau5";
-  }
-
-  &[data-nombre-joueur="7"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: ". . plateau0 plateau0 . ." "plateau1 plateau1 plateau2 plateau2 plateau3 plateau3" "plateau4 plateau4 plateau5 plateau5 plateau6 plateau6";
-  }
-
-  &[data-nombre-joueur="8"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: ". plateau0 plateau0 plateau1 plateau1 ." "plateau2 plateau2 plateau3 plateau3 plateau4 plateau4" "plateau5 plateau5 plateau6 plateau6 plateau7 plateau7";
-  }
-
   .plateau0 { grid-area: plateau0; }
   .plateau1 { grid-area: plateau1; }
   .plateau2 { grid-area: plateau2; }
@@ -69,6 +34,42 @@
     }
   }
 }
+
+.plateaux[data-nombre-joueurs="4"] {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "plateau0 plateau1" "plateau2 plateau3";
+}
+
+.plateaux[data-nombre-joueurs="5"] {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "plateau0 plateau0 plateau1 plateau1" ". plateau2 plateau2 ." "plateau3 plateau3 plateau4 plateau4";
+}
+
+.plateaux[data-nombre-joueurs="6"] {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "plateau0 plateau0 plateau1 plateau1" ". plateau2 plateau2 plateau3 plateau3 ." "plateau4 plateau4 plateau5 plateau5";
+}
+
+.plateaux[data-nombre-joueurs="7"] {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". . plateau0 plateau0 . ." "plateau1 plateau1 plateau2 plateau2 plateau3 plateau3" "plateau4 plateau4 plateau5 plateau5 plateau6 plateau6";
+}
+
+.plateaux[data-nombre-joueurs="8"] {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". plateau0 plateau0 plateau1 plateau1 ." "plateau2 plateau2 plateau3 plateau3 plateau4 plateau4" "plateau5 plateau5 plateau6 plateau6 plateau7 plateau7";
+}
+
 
 section.lancer-partie {
   width: 100vw;
