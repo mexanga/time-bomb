@@ -10,7 +10,7 @@ export class Carte {
   public static CarteBombe = new Carte(Carte.Types[1]);
   public static CarteDesamorcage = new Carte(Carte.Types[2]);
 
-  private valeur: string;
+  valeur: string;
   private estCache: boolean;
 
   constructor(

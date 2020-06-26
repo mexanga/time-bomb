@@ -1,6 +1,8 @@
 <section class="plateaux" *ngIf="jeuLance" [attr.data-nombre-joueurs]="nombreJoueurs">
   <app-plateau-joueur *ngFor="let plateau of plateauxJoueurs(); let cursor = index" [attr.data-equipe]="plateau.equipe"
-  [ngClass]="'plateau' + cursor">{{plateau.joueur.id}}</app-plateau-joueur>
+  [ngClass]="'plateau' + cursor">
+    <app-carte *ngFor="let carte of plateau.main.cartes">{{carte}}</app-carte>
+  </app-plateau-joueur>
 </section>
 
 <section class="lancer-partie" *ngIf="!jeuLance">

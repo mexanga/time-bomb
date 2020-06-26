@@ -2,7 +2,7 @@ import {Carte} from './carte';
 
 export class Deck {
 
-  private cartes: Carte[];
+  cartes: Carte[];
 
   constructor(
     cartes: Carte[] = []
