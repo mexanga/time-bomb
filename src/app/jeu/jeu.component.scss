@@ -1,16 +1,53 @@
 @import "~bootstrap/scss/bootstrap-utilities";
 
 .plateaux {
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 100vw;
-  max-width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
+  display: grid;
+
+  &[data-nombre-joueur="4"] {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "plateau0 plateau1" "plateau2 plateau3";
+  }
+
+  &[data-nombre-joueur="5"] {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "plateau0 plateau0 plateau1 plateau1" ". plateau2 plateau2 ." "plateau3 plateau3 plateau4 plateau4";
+  }
+
+  &[data-nombre-joueur="6"] {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "plateau0 plateau0 plateau1 plateau1" ". plateau2 plateau2 plateau3 plateau3 ." "plateau4 plateau4 plateau5 plateau5";
+  }
+
+  &[data-nombre-joueur="7"] {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". . plateau0 plateau0 . ." "plateau1 plateau1 plateau2 plateau2 plateau3 plateau3" "plateau4 plateau4 plateau5 plateau5 plateau6 plateau6";
+  }
+
+  &[data-nombre-joueur="8"] {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: ". plateau0 plateau0 plateau1 plateau1 ." "plateau2 plateau2 plateau3 plateau3 plateau4 plateau4" "plateau5 plateau5 plateau6 plateau6 plateau7 plateau7";
+  }
+
+  .plateau0 { grid-area: plateau0; }
+  .plateau1 { grid-area: plateau1; }
+  .plateau2 { grid-area: plateau2; }
+  .plateau3 { grid-area: plateau3; }
+  .plateau4 { grid-area: plateau4; }
+  .plateau5 { grid-area: plateau5; }
+  .plateau6 { grid-area: plateau6; }
+  .plateau7 { grid-area: plateau7; }
 
   app-plateau-joueur {
-    width: 50vw;
-    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
